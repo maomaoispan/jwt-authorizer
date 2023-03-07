@@ -141,7 +141,7 @@ pub async fn tokens() -> Json<Value> {
 }
 
 /// exposes some oidc "like" endpoints for test purposes
-pub fn run_server() -> &'static str {
+pub fn run_server(&str: url) -> &'static str {
     let app = Router::new()
         .route("/.well-known/openid-configuration", get(discovery))
         .route("/jwks", get(jwks))
